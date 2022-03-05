@@ -1,0 +1,13 @@
+{
+    "name": "docker_node_expressjs",
+    "version": "1.0.0",
+    "description": "Node.js + MySQL + PhpMyAdmin on Docker",
+    "author": "Gopal Joshi <gopal.joshi73@hotmail.com>",
+    "main": "server.js",
+    "scripts": {
+      "start": "node src/server.js"
+    },
+    "dependencies": {
+      "express": "^4.16.1"
+    }
+  }
