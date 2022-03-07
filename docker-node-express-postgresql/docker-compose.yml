@@ -7,16 +7,18 @@ networks:
 services:
   server:
     build:
-      context: ./docker
+      context: ./
       dockerfile: Dockerfile
     container_name: docker_server
     env_file: .env
+    tty: true
     ports:
       - "8080:8080"
     depends_on:
       - db
     volumes:
-      - ./src:/usr/src/node-server
+      - ./:/usr/src/node-server
+      - /usr/src/node-server/node_modules
     networks:
       - docker-network
   db:
