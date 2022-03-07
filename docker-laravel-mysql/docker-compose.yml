@@ -30,3 +30,11 @@ services:
     networks:
       - docker-laravel
   
+  db:
+    container_name: myapp_mysql
+    image: mysql:8.0.28
+    env_file:
+      - ./application/.env
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_DB_PWD
