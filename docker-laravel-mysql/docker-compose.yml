@@ -1,0 +1,31 @@
+version: '3.9'
+
+networks:
+  docker-laravel:
+    driver: bridge
+
+services:
+  php:
+    container_name: myapp_php
+    build:
+      context: ./docker/php
+    # depends_on:
+    #   - db
+    networks:
+      - docker-laravel
+    volumes:
+      - ./:/var/www
+
+  nginx:
+    container_name: myapp_nginx
+    build:
+      context: ./docker/nginx
+    ports:
+      - 8080:80
+    depends_on:
+      - php
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d/
+    networks:
+      - docker-laravel
