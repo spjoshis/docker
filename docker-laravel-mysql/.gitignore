@@ -13,3 +13,4 @@ application/npm-debug.log
 application/yarn-error.log
 application/.idea
 application/.vscode
+docker/mysql/.data
