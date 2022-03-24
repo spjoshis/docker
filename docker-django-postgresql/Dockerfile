@@ -6,6 +6,6 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /backend-app
 COPY src/requirements.txt /backend-app/
 RUN pip install -r requirements.txt
-COPY . /backend-app/
+# COPY . /backend-app/
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
