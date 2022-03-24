@@ -1,5 +1,8 @@
 version: "3.9"
-   
+networks:
+  docker-django:
+    driver: bridge
+
 services:
   db:
     image: postgres
@@ -9,6 +12,8 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    networks:
+      - docker-django
   web:
     build: .
     volumes:
@@ -21,3 +26,5 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+    networks:
+      - docker-django
