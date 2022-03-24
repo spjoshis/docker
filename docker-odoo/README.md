@@ -1,7 +1,7 @@
 # Setup
 1. Run docker-compose up -d
-2. Connect to ssh `docker exec -it odoo_mytyre /bin/bash`
-3. When you setup connect the ssh and run below command
+2. Connect to ssh `docker exec -it odoo /bin/bash`
+3. When you setup connect the ssh and run below command to setup manually
    1. `apt-get install wget libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libssl-dev libpq-dev libjpeg-dev -y`
    2. `pip3 install -r ./requirements.txt`
    3. `apt-get install nodejs npm -y`
