@@ -5,7 +5,7 @@ RUN apt-get upgrade -y
 
 RUN adduser -system -home=/opt/odoo -group odoo
 
-RUN apt-get install wget libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libssl-dev libpq-dev libjpeg-dev -y
+RUN apt-get install wget python3.8 python3-pip libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libssl-dev libpq-dev libjpeg-dev -y
 RUN apt-get install nodejs npm xfonts-75dpi -y
 
 RUN mkdir /var/lib/odoo
