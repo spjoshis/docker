@@ -6,8 +6,11 @@ networks:
 services:
   db:
     image: postgres
+    container_name: django_db
     volumes:
-      - ./docker/data/postgres:/var/lib/postgresql/data
+      - ./docker/postgres/data:/var/lib/postgresql/data
+      - ./docker/postgres/postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./docker/postgres/logs:/logs
     environment:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
@@ -16,6 +19,7 @@ services:
       - docker-django
   web:
     build: .
+    container_name: django_web
     volumes:
       - ./src:/backend-app
     ports:
@@ -26,5 +30,13 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+    networks:
+      - docker-django
+  adminer:
+    container_name: django_adminer
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
     networks:
       - docker-django
