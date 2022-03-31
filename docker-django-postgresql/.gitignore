@@ -1,2 +1,1 @@
-/var/lib/postgresql/data
-/var/lib/postgresql/log
+docker/postgres/data

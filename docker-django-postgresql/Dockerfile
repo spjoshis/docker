@@ -10,6 +10,5 @@ COPY src/requirements.txt /backend-app/
 
 RUN pip install -r requirements.txt
 # COPY . /backend-app/
-RUN ls
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
