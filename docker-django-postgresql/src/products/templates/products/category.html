@@ -1,0 +1,9 @@
+{% extends 'common/header.html' %}
+
+{% block content %}
+    <h1>{{name}}</h1>
+    {% for i in products %}
+        <h5>{{ i.title }}</h5>
+        <p>{{ i.description }}</p>
+    {% endfor %}
+{% endblock %}
