@@ -2,6 +2,7 @@
 
 {% block content %}
     <h1>{{name}}</h1>
+    <a href="{{ url }}">Add New</a>
     {% for i in products %}
         <div>
             <h5>{{ i.title }}</h5>
