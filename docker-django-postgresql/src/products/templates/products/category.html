@@ -3,7 +3,11 @@
 {% block content %}
     <h1>{{name}}</h1>
     {% for i in products %}
-        <h5>{{ i.title }}</h5>
-        <p>{{ i.description }}</p>
+        <div>
+            <h5>{{ i.title }}</h5>
+            <p>{{ i.description }}</p>
+            <a href="{{ i.get_absolute_url }}">Edit</a>
+            <hr />
+        </div>
     {% endfor %}
 {% endblock %}
