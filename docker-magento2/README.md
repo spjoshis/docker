@@ -1,5 +1,6 @@
-Setup: https://www.mageplaza.com/kb/setup-magento-2-on-docker.html
+Docker Setup: https://www.mageplaza.com/kb/setup-magento-2-on-docker.html
 
+Magento Setup:
 php bin/magento setup:install \
 --admin-firstname=John \
 --admin-lastname=Doe \
@@ -21,3 +22,7 @@ php bin/magento setup:install \
 --admin-use-security-key=1 \
 --session-save=files \
 --use-sample-data
+
+
+https://yegorshytikov.medium.com/how-to-use-react-js-with-magento-2-ed5e9f3cf9fe
+https://github.com/Genaker/Luma-React-PWA-Magento-Theme
